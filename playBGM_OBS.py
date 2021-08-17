@@ -9,8 +9,7 @@ import threading
 import os
 
 pathlist = [
-            #再生したいBGMをパスで指定※wav形式のみ(同ディレクトリならパス無くてもOK)
-            #名前に[P]の付くプロポーショナルフォント推奨
+            #再生したいBGMをパスで複数指定(同ディレクトリならパス無くてもOK)　※wav形式のみ
         ]
 
 class Window:
@@ -20,8 +19,8 @@ class Window:
 
         self.root.title("BGM")
         self.label = tk.Label(self.root)
-        self.label["font"] = ("MSゴシック", 50) #フォントとフォントサイズを指定(インストール済みフォントもOK)
-        self.label["bg"] = "#ffffff" #背景色の指定(#00ff00でグリーンバック)
+        self.label["font"] = ("MS P ゴシック", 50) #フォントとフォントサイズを指定(インストール済みフォントもOK,プロポーショナル推奨)
+        self.label["bg"] = "#00ff00" #背景色の指定(#00ff00でグリーンバック)
         self.label["fg"] = "#2b2b2b" #文字色の指定
         self.label.grid(column=0, row=0)
 
