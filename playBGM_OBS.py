@@ -10,6 +10,7 @@ import os
 
 pathlist = [
             #再生したいBGMをパスで指定※wav形式のみ(同ディレクトリならパス無くてもOK)
+            #名前に[P]の付くプロポーショナルフォント推奨
         ]
 
 class Window:
