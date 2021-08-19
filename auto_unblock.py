@@ -22,16 +22,22 @@ ff_list = [
 ]
 
 result = api.get_followers_ids(screen_name = sc_name, stringify_ids = True)
+follow = api.get_friends_ids(screen_name = sc_name, stringify_ids = True)
 
-count = 0
 ptt_list = []
+follow_list = follow['ids']
 
 while True:
     for one in result['ids']:
         usr_id = one
         print(one)
 
+        #安全装置
         if usr_id in ff_list:
+            pass
+
+        #自分がフォローしているアカウントは処理に回さない
+        elif usr_id in follow_list:
             pass
 
         else:
@@ -47,12 +53,10 @@ while True:
             except twython.exceptions.TwythonError as e:
                 print(e)
 
-    count += len(result)
-
     print("処理終了_処理したアカウントは以下の通りです")
     for one in ptt_list:
         print(one)
-    print("処理アカウント数:", count)
+    print("処理アカウント数:", len(ptt_list))
     print("処理を通過したアカウントは以下の通りです")
     for one in result['ids']:
         print(one)
