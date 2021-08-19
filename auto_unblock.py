@@ -50,11 +50,11 @@ while True:
     count += len(result)
 
     print("処理終了_処理したアカウントは以下の通りです")
-    for two in ptt_list:
-        print(two)
+    for one in ptt_list:
+        print(one)
     print("処理アカウント数:", count)
     print("処理を通過したアカウントは以下の通りです")
-    for three in result['ids']:
-        print(three)
+    for one in result['ids']:
+        print(one)
     print("通過総アカウント数:", len(result['ids']))
     break
