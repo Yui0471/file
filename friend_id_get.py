@@ -2,11 +2,10 @@ from twython import Twython
 import twython.exceptions
 import time, datetime
 
-#TOKEN入力
-consumer_key = ''
-consumer_secret = ''
-access_token = ''
-access_token_secret = ''
+consumer_key = input('consumer_key >>> ')
+consumer_secret = input('consumer_secret >>> ')
+access_token = input('access_token >>> ')
+access_token_secret = ('access_token_secret >>> ')
 
 api = Twython(
     consumer_key,
@@ -15,10 +14,11 @@ api = Twython(
     access_token_secret
 )
 
-#対象アカウントのscreen_nameを入力
-sc_name =""
-
 print('[プログラム開始]')
+time.sleep(1)
+print('探索対象アカウントのスクリーンネームを入力してください')
+sc_name = input('>>> ')
+print('対象アカウント: ' + sc_name)
 time.sleep(1)
 print('[処理開始]FF内アカウントリストの作成を開始します')
 time.sleep(1)
@@ -64,7 +64,6 @@ while True:
             print(e)
             break
     
-    f.close()
     time.sleep(1)
     print('\n[処理終了]FF内アカウントリストのファイル書き出し処理を終了しました')
     time.sleep(1)
@@ -76,5 +75,8 @@ while True:
     time.sleep(1)
     print('計' + str(count) + 'アカウントを記録しました')
     time.sleep(1)
+    f.close()
+    print('出力ファイル名:' + file_name)
+    print('同ディレクトリに正常に出力されました')
     print('[プログラム終了]')
     break
