@@ -19,6 +19,7 @@ time.sleep(1)
 print('探索対象アカウントのスクリーンネームを入力してください')
 sc_name = input('>>> ')
 print('対象アカウント: ' + sc_name)
+print('-'*30)
 time.sleep(1)
 print('[処理開始]FF内アカウントリストの作成を開始します')
 time.sleep(1)
@@ -65,6 +66,7 @@ while True:
             break
     
     time.sleep(1)
+    print('-'*30)
     print('\n[処理終了]FF内アカウントリストのファイル書き出し処理を終了しました')
     time.sleep(1)
     print('書き出しを実行したアカウントは以下の通りです')
@@ -73,6 +75,7 @@ while True:
         print(one)
         time.sleep(0.01)
     time.sleep(1)
+    print('-'*30)
     print('計' + str(count) + 'アカウントを記録しました')
     time.sleep(1)
     f.close()
