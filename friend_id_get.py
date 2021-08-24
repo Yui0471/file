@@ -80,8 +80,8 @@ for one in ff_id_list:
 
 f.close()
 
-print('\n' + '-'*30)
-print('\n[処理終了]FF内アカウントリストのファイル書き出し処理を終了しました')
+print('-'*30)
+print('[処理終了]FF内アカウントリストのファイル書き出し処理を終了しました')
 time.sleep(1)
 print('書き出しを実行したアカウントは以下の通りです')
 time.sleep(1)
