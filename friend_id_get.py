@@ -1,6 +1,7 @@
 from twython import Twython
 import twython.exceptions
 import time, datetime
+import sys
 
 consumer_key = input('consumer_key >>> ')
 consumer_secret = input('consumer_secret >>> ')
@@ -23,6 +24,7 @@ print('-'*30)
 time.sleep(1)
 print('[処理開始]FF内アカウントリストの作成を開始します')
 time.sleep(1)
+print('[データ取得中……]')
 
 user_data = api.show_user(screen_name=sc_name)
 follow_count = user_data['friends_count']
@@ -59,6 +61,8 @@ try:
 
 except twython.exceptions.TwythonError as e:
     print(e)
+    print('[error!]エラーが発生しました！時間をおいて再度実行してください')
+    sys.exit()
 
 ff_id_list = set(f_user_list) & set(f_id_list)
 
@@ -67,12 +71,12 @@ file_name = today.strftime('%Y%m%d%H%M%S') + '.txt'
 f = open(file_name, 'w', encoding='UTF-8')
 f.write('friend_list = [' + '\n')
 
+print('[データ取得完了]取得データを出力します')
+
 for one in ff_id_list:
 
     write_data = '#' + f_user_list[one] + '\n"' + one + '",\n'
     f.write(write_data)
-
-    print('\r' + str(one), end='')
 
 f.close()
 
@@ -83,7 +87,7 @@ print('書き出しを実行したアカウントは以下の通りです')
 time.sleep(1)
 for one in ff_id_list:
     print(f_user_list[one])
-    time.sleep(0.05)
+    time.sleep(0.01)
 print('-'*30)
 print('計' + str(len(ff_id_list)) + 'アカウントを記録しました')
 time.sleep(1)
