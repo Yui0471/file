@@ -5,7 +5,7 @@ import time, datetime
 consumer_key = input('consumer_key >>> ')
 consumer_secret = input('consumer_secret >>> ')
 access_token = input('access_token >>> ')
-access_token_secret = ('access_token_secret >>> ')
+access_token_secret = input('access_token_secret >>> ')
 
 api = Twython(
     consumer_key,
