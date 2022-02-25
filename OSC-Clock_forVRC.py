@@ -25,29 +25,22 @@ print(msg)
 print('初期化します')
 
 #初期化
+
+client.send_message("/avatar/parameters/hour_tp", 10)
+client.send_message("/avatar/parameters/hour_op", 10)
+client.send_message("/avatar/parameters/minute_tp", 10)
+client.send_message("/avatar/parameters/minute_op", 10)
+client.send_message("/avatar/parameters/dot", 10)
+
+time.sleep(0.3)
+
 client.send_message("/avatar/parameters/hour_tp", 0)
 client.send_message("/avatar/parameters/hour_op", 0)
 client.send_message("/avatar/parameters/minute_tp", 0)
 client.send_message("/avatar/parameters/minute_op", 0)
 client.send_message("/avatar/parameters/dot", 0)
 
-time.sleep(0.5)
-
-client.send_message("/avatar/parameters/hour_tp", 10)
-client.send_message("/avatar/parameters/hour_op", 10)
-client.send_message("/avatar/parameters/minute_tp", 10)
-client.send_message("/avatar/parameters/minute_op", 10)
-client.send_message("/avatar/parameters/dot", 10)
-
-time.sleep(0.5)
-
-client.send_message("/avatar/parameters/hour_tp", 10)
-client.send_message("/avatar/parameters/hour_op", 10)
-client.send_message("/avatar/parameters/minute_tp", 10)
-client.send_message("/avatar/parameters/minute_op", 10)
-client.send_message("/avatar/parameters/dot", 10)
-
-time.sleep(1)
+time.sleep(0.3)
 
 print('時刻表示を開始します\n')
 print('Ctrl+Cで終了します\n')
