@@ -1,12 +1,15 @@
 # -*- coding:UTF-8 -*-
 
+#Linux環境でのみ動作します
+#動作確認端末:POLAR Verity Sense
+
 from bluepy import btle
 from pythonosc.udp_client import SimpleUDPClient
 import time
 import sys
 import datetime
 
-ip = "192.168.150.139"
+ip = "yourIP"
 port = 9000
 params = ""
 

@@ -3,7 +3,7 @@ import time
 import sys
 import datetime
 
-ip = "192.168.150.139"
+ip = "yourServerIP"
 port = 9000
 
 client = SimpleUDPClient(ip, port)

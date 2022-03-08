@@ -52,7 +52,7 @@ try:
         dispatcher.map("/avatar/*", print_handler)
         dispatcher.set_default_handler(default_handler)
 
-        ip = "192.168.150.106"
+        ip = "yourIP"
         port = 9001
 
         server = BlockingOSCUDPServer((ip, port), dispatcher)
