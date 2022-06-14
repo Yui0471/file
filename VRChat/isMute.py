@@ -3,6 +3,7 @@
 from pythonosc.dispatcher import Dispatcher
 from pythonosc.osc_server import BlockingOSCUDPServer
 from pythonosc.udp_client import SimpleUDPClient
+#import pyautogui
 import sys
 import time
 
@@ -12,10 +13,13 @@ port = 9000
 
 client = SimpleUDPClient(ip, port)
 
+#input("クリック位置でenter")
+#click_point = pyautogui.position()
+
 try:
     while True:
         def print_handler(address, *args):
-            global MuteSelf
+            #global click_point
             print(f"{address}: {args}")
 
             if address == "/avatar/parameters/isMute": #ボタンが押された!
@@ -25,6 +29,14 @@ try:
                 time.sleep(0.1)
                 client.send_message("/input/Voice", 0)
                 print("ミュート")
+                
+            
+
+            #elif address == "/avatar/parameters/isExit": #終了
+                #pyautogui.moveTo(click_point)
+                #pyautogui.click()
+                #print("実行")
+
 
                 
         def default_handler(address, *args):
